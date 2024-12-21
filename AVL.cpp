@@ -99,9 +99,22 @@ class AVLTree {
             return root;
         }
 
-        int search() {
-            int current = 0;
-            return current;
+        bool search(Node* root, int key) {
+            if (root == nullptr) {
+            return false; 
+            }
+
+            if (root->key == key) {
+            return true; 
+            }
+            
+            if (key < root->key) {
+            return search(root->left, key);
+            }
+                
+            else if (key > root-> key) {
+            return search(root->right, key);
+            }
         }
 
         int getHeight(Node* root){
